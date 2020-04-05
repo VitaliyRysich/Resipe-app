@@ -5,7 +5,7 @@ import rysich.springframework.spring5recipeapp.domain.Category;
 
 import java.util.Optional;
 
-public interface CategotyRepository extends CrudRepository<Category, Long> {
+public interface CategoryRepository extends CrudRepository<Category, Long> {
 
     Optional<Category> findByDescription(String description);
 }

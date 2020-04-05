@@ -4,7 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import rysich.springframework.spring5recipeapp.domain.Category;
 import rysich.springframework.spring5recipeapp.domain.UnitOfMeasure;
-import rysich.springframework.spring5recipeapp.repositories.CategotyRepository;
+import rysich.springframework.spring5recipeapp.repositories.CategoryRepository;
 import rysich.springframework.spring5recipeapp.repositories.UnitOfMeasureRepository;
 
 import java.util.Optional;
@@ -12,10 +12,10 @@ import java.util.Optional;
 @Controller
 public class IndexController {
 
-    private CategotyRepository categotyRepository;
+    private CategoryRepository categotyRepository;
     private UnitOfMeasureRepository unitOfMeasureRepository;
 
-    public IndexController(CategotyRepository categotyRepository, UnitOfMeasureRepository unitOfMeasureRepository) {
+    public IndexController(CategoryRepository categotyRepository, UnitOfMeasureRepository unitOfMeasureRepository) {
         this.categotyRepository = categotyRepository;
         this.unitOfMeasureRepository = unitOfMeasureRepository;
     }

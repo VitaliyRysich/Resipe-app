@@ -3,8 +3,9 @@ package rysich.springframework.spring5recipeapp.services;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mock;
-import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
+import rysich.springframework.spring5recipeapp.converters.RecipeCommandToRecipe;
+import rysich.springframework.spring5recipeapp.converters.RecipeToRecipeCommand;
 import rysich.springframework.spring5recipeapp.domain.Recipe;
 import rysich.springframework.spring5recipeapp.repositories.RecipeRepository;
 
@@ -23,10 +24,16 @@ public class RecipeServiceImplTest {
     @Mock
     RecipeRepository recipeRepository;
 
+    @Mock
+    RecipeCommandToRecipe recipeCommandToRecipe;
+
+    @Mock
+    RecipeToRecipeCommand recipeToRecipeCommand;
+
     @Before
     public void setUp() throws Exception {
         MockitoAnnotations.initMocks(this);
-        recipeService = new RecipeServiceImpl(recipeRepository);
+        recipeService = new RecipeServiceImpl(recipeRepository, recipeCommandToRecipe, recipeToRecipeCommand);
     }
 
     @Test
